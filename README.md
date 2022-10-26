@@ -1,4 +1,4 @@
-# O-N Chat-client-
+# O-N Chat-client 
 chat appliction for web, supporting multiple message types (text, pictures, video, recording)
 
 # Run the project:
