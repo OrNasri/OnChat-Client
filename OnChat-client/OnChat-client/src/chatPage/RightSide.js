@@ -26,7 +26,7 @@ function RightSide({ current,user, setUser, list, setList, connection}){
         status = res.status;})
         // transfer success
        if(status == 201){
-        await fetch('http://localhost:7242/api/contacts/'+current.UserName+'/contacts/'+user.id+'/messages',
+        await fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+current.UserName+'/contacts/'+user.id+'/messages',
         {method:'POST',
         headers:{ 'Content-Type': 'application/json',
         "Access-Control-Allow-Origin" : "*", 
@@ -37,7 +37,7 @@ function RightSide({ current,user, setUser, list, setList, connection}){
         ).then(async res=>{res.json(); 
         status = res.status;})
         if (status == 201){
-         await fetch('http://localhost:7242/api/contacts/'+current.UserName+'/contacts/'+user.id+'/messages'
+         await fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+current.UserName+'/contacts/'+user.id+'/messages'
          ).then(async res=>res.json())
          .then(data=>{
                 setUser({id: user.id, name: user.name, server:user.server, messages:data})

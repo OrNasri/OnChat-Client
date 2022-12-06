@@ -34,7 +34,7 @@ function SignUpPage({ setMode, setNewUser, setImg, img}) {
     // checks in signup form
     async function ifSubmit(x){
       x.preventDefault();
-      const res = await fetch('http://localhost:7242/api/contacts',
+      const res = await fetch('https://onchat20221206200008.azurewebsites.net/api/contacts',
       {method:'POST', 
       headers:{ 'Content-Type': 'application/json'},
       

@@ -14,7 +14,7 @@ function LeftSide({current, setState, user, setUser, list, setList, connection, 
 
 useEffect( () =>{
         async function fetchData1(){
-            const res =  await fetch('http://localhost:7242/api/contacts')
+            const res =  await fetch('https://onchat20221206200008.azurewebsites.net/api/contacts')
             const data =await res.json();
                 setNewContact(data); 
             }
@@ -47,7 +47,7 @@ useEffect( () =>{
             })}
             ).then(res=>{
                 if(res.status == 201){
-                    fetch('http://localhost:7242/api/contacts/'+current.UserName+'/contacts',
+                    fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+current.UserName+'/contacts',
                     {method:'POST',
                     headers:{ 'Content-Type': 'application/json', 
                     "Access-Control-Allow-Origin" : "*", 
@@ -59,7 +59,7 @@ useEffect( () =>{
                     })}
                 ).then(res=>{
                     if (res.status == 201){;
-                        fetch('http://localhost:7242/api/contacts/'+current.UserName)
+                        fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+current.UserName)
                         .then(async res=>res.json())
                         .then(data=>{
                             setList(data);
@@ -70,7 +70,7 @@ useEffect( () =>{
     }
         
     async function putMessages(name2, i){
-        await fetch('http://localhost:7242/api/contacts/'+current.UserName+'/contacts/'+name2+'/messages',
+        await fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+current.UserName+'/contacts/'+name2+'/messages',
         ).then(async res=>res.json())
         .then(data=>{
                 if (data.status != 404){
@@ -91,7 +91,7 @@ useEffect( () =>{
                 messages: []});
           }
         });
-        await fetch('http://localhost:7242/api/contacts/'+current.UserName,
+        await fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+current.UserName,
         ).then(async res=>res.json())
         .then(data=>{
                setList(data);
@@ -125,7 +125,7 @@ useEffect( () =>{
     
     useEffect( () =>{
     async function fetchData(){
-        const res =  await fetch('http://localhost:7242/api/contacts/'+current.UserName+'/contacts');
+        const res =  await fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+current.UserName+'/contacts');
         const data =await res.json();
         setList(data);
         }

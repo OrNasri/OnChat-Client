@@ -6,7 +6,7 @@ function LoginPage({setMode,current, setCurrent, newUser}) {
 
     async function ifSubmited(e) {  
         e.preventDefault();
-        const res = await fetch('http://localhost:7242/api/contacts/'+usersArray.username,
+        const res = await fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+usersArray.username,
         {method:'POST', 
         headers:{ 'Content-Type': 'application/json'},
         body:JSON.stringify({

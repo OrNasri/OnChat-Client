@@ -19,11 +19,11 @@ function Chat({current}){
 
     // open connect 
     async function AddMessage(from){
-        fetch('http://localhost:7242/api/contacts/'+ current.UserName)
+        fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+ current.UserName)
                     .then( res=>res.json())
                     .then(data=>{
                     setList(data);
-                    fetch('http://localhost:7242/api/contacts/'+current.UserName+'/contacts/'+ id.current +'/messages')
+                    fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/'+current.UserName+'/contacts/'+ id.current +'/messages')
                         .then( res=>res.json())
                         .then(data=>{
                             mess.current = data;
@@ -33,7 +33,7 @@ function Chat({current}){
     }
     useEffect(() => {
         const newConnection = new HubConnectionBuilder()
-            .withUrl('http://localhost:7242/Hubs/MyHub',{
+            .withUrl('https://onchat20221206200008.azurewebsites.net/Hubs/MyHub',{
                 skipNegotiation:true,
                 transport:HttpTransportType.WebSockets
             })
@@ -56,7 +56,7 @@ function Chat({current}){
                 })
                 connection.on('ReceiveContact', to => {
                 if(current.UserName == to){
-                    fetch('http://localhost:7242/api/contacts/' + current.UserName)
+                    fetch('https://onchat20221206200008.azurewebsites.net/api/contacts/' + current.UserName)
                     .then( res=>res.json())
                     .then(data=>{
                         setList(data);
