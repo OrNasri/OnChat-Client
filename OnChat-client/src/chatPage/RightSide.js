@@ -12,7 +12,7 @@ function RightSide({ current,user, setUser, list, setList, connection}){
     async function submit(event, mydata, type){
         var status;
        if (msg.length != 0 && msg != " "){
-        await fetch('http://'+user.server+'/api/transfer',
+        await fetch('https://onchat-client.vercel.app/api/transfer',
         {method:'POST',
         headers:{ 'Content-Type': 'application/json',
         "Access-Control-Allow-Origin" : "*", 
