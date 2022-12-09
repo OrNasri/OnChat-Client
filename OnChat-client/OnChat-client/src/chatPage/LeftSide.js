@@ -43,7 +43,7 @@ useEffect( () =>{
             body:JSON.stringify({
                 from: current.UserName,
                 to: userAdd.username,
-                server: 'localhost:7242'
+                server: 'https://onchat-client.vercel.app/'
             })}
             ).then(res=>{
                 if(res.status == 201){

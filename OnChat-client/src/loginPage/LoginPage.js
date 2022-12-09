@@ -63,7 +63,7 @@ function LoginPage({setMode,current, setCurrent, newUser}) {
         <p className='rate'>  
             Rate Us 
                 {/* signUp button */}
-                    <a href = "https://localhost:7161/"  target="_blank" style={{color:'blue'}}> Here</a>
+                    <a href = "https://onchat-client.vercel.app/"  target="_blank" style={{color:'blue'}}> Here</a>
         </p>
         <div className ="loginPageHeadline w3-light-grey w3-container w3-center w3-large w3-opacity" > 
                         Login
